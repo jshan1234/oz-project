@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>Admin Page</title>
+    <!-- CSS 적용 -->
+    <!-- <link href="../src/admin.css" rel="stylesheet"> -->
+    <!--부트스트랩 사용을 위한 코드 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <!-- 글꼴 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sunflower:wght@300&display=swap" rel="stylesheet">
+<style>
+  * {
+  font-family: "Sunflower", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+   }
+   </style>
+</head>
+<body>
+    <div class="container mt-3">
+        
+        <h3 class="mt-5 mb-3" id='docTitle'>신규 등록 상품</h3>
+        <form class="row row-cols-lg-auto g-4 align-items-center flex-wrap">      
+            <div class="col-12">
+              <label class="visually-hidden" for="cloth_type">Preference</label>
+              <select class="form-select" id="cloth_type">
+                <!-- 카테고리 셀렉트 코드를 넣어주세요-->
+                <option class = 'cateory' value="전체" selected>Category</option>
+                <option class = 'cateory' value="상의">상의</option>
+                <option class = 'cateory' value="하의">하의</option>
+                <option class = 'cateory' value="신발">신발</option>
+                <option class = 'cateory' value="패션잡화">패션잡화</option>
+              </select>
+            </div>
+            <div class="col-12">
+                <label class="visually-hidden" for="cloth_gender">Preference</label>
+                <select class="form-select" id="cloth_gender">
+                  <!-- 카테고리 셀렉트 코드를 넣어주세요-->
+                  <option class = 'gender' value="전체" selected>Gender</option>
+                  <option class = 'gender' value="남성">남성</option>
+                  <option class = 'gender' value="여성">여성</option>
+                  <option class = 'gender' value="공용">공용</option>
+                </select>
+              </div>
+            <div class="col-3 flex-fill">
+                <!-- input 입력창 코드를 넣어주세요 -->
+                <input type="text" id="product_name_input" class='form-control flex-grow-1' placeholder="제품명을 입력해주세요">
+              </div>
+              <div class="col-auto">
+                <!-- 조회라는 이름의 버튼 만들기 -->
+                <button id="search-button" class="btn btn-primary" value="search" type="=button">검색</button>
+              </div>
+              <div class="col-auto">
+                <!-- 전체 선택 라는 이름의 버튼 만들기 -->
+                <button id="search-button" class="btn btn-light btn-outline-dark" value="select_all">전체 선택</button>
+              </div>
+              <div class="col-auto">
+                <!-- 선택 삭제라는 이름의 버튼 만들기 -->
+                <button id="search-button" class="btn btn-danger " value="del">선택 삭제</button>
+              </div>
+
+              <!-- 테스트
+              <div class="d-grid gap-2 d-md-flex ">
+                <button class="btn btn-primary me-md-2" type="button">Button</button>
+                <button class="btn btn-primary" type="button">Button</button>
+              </div> -->
+
+              
+
+          </form>
+          <div class="container mt-3">
+        <table class="table table-sm">
+            <thead>
+                <!-- 열의 속성값을 나타내는 코드를 작성해주세요 (예 : 카테고리, 브랜드, 상품명, 가격) -->
+                <thead>
+                    <tr>
+                      
+                        <th scope="col">Check</th>
+                        <th scope="col">Category</th>
+                        <th scope="col">Brand</th>
+                        <th scope="col">Brand name</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Gender</th>
+                    </tr>
+                </thead>
+            </thead>
+            <tbody id="data-table">
+                <!-- 추후 크롤링한 데이터가 들어가는 자리 -->
+            </tbody>
+        </table>
+    </div>
+    <!-- 페이지 네이션 코드를 넣어주세요 -->
+    <nav aria-label="...">
+        <ul class="pagination  justify-content-center">
+            <li class="page-item disabled">
+                <span class="page-link">이전</span>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item"><a class="page-link" href="#">다음</a>
+            </li>
+        </ul>
+    </nav>
+    <a href="https://github.com/jshan1234" target="_blank">
+        <img src="heart.png" alt="프로필">
+    </a>
+    
+    <script src='admin.js'>
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+</body>
+</html>
